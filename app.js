@@ -63,22 +63,50 @@ function hourlySales(){
         salesByHour.push(oneHour);
     }
     this.salesByHour = salesByHour;
-    
-    const mainList = document.getElementById('list');
-    const title = document.createElement('H3');
-    title.textContent = this.name;
-    const ul = document.createElement('UL');
-    mainList.appendChild(ul);
-    ul.appendChild(title);
-    
-    for (let i= 0; i < hours.length; i++) {
-        let li = document.createElement('LI');
-        li.textContent = "Hour: " + this.salesByHour[i].hour + " Cookies: " + this.salesByHour[i].cookiesSold;
-        ul.appendChild(li);
-        // this.hourlySales();
-    }
 
+    // table head
+    const thead = document.createElement('THEAD');
+    table.appendChild(thead);
+    thead.textContent = this.name;
+    
+    //table row
+    const trow = document.createElement('TR');
+    table.appendChild(trow);
+    trow.textContent = this.hours;
+
+    const hourData = document.createElement('TD');
+    trow.appendChild(hourData);
+    hourData.textContent = "Hours: " + this.salesByHour.hour;
+    
+    const cookieData = document.createElement('TD');
+    trow.appendChild(cookieData);
+    cookieData.textContent = "Cookies: " + this.salesByHour.cookiesSold;
+    
+
+    // // Original render code
+    // const mainList = document.getElementById('list');
+    // const title = document.createElement('H3');
+    // title.textContent = this.name;
+    // const ul = document.createElement('UL');
+    // mainList.appendChild(ul);
+    // ul.appendChild(title);
+
+    // for (let i= 0; i < hours.length; i++) {
+    //     let li = document.createElement('LI');
+    //     li.textContent = "Hour: " + this.salesByHour[i].hour + " Cookies: " + this.salesByHour[i].cookiesSold;
+    //     ul.appendChild(li);
+    // }
 }
+
+const mainList = document.getElementById('list');
+const table = document.createElement('TABLE');
+mainList.appendChild(table);
+
+// //table head
+// const thead = document.createElement('THEAD');
+// table.appendChild(thead);
+// thead.textContent = "Hours: ";
+
 
 airport.hourlySales();
 pioneer.hourlySales();
