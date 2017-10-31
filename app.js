@@ -1,9 +1,4 @@
 'use strict'
-
-// const li = document.createElement('li');
-// li.textContent = "List item";
-// ul.appendChild(li);
-
 const airport = {
     name: 'Portland Airport',
     min: 23,
@@ -46,12 +41,10 @@ const waterfront = {
 
 
 
-
-
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 
-function getRandomIntInclusive(min,max) {
+function getRandom(min,max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -61,7 +54,7 @@ function hourlySales(){
     const salesByHour = [];
     for (let i=0; i < hours.length; i++){
         const hour = hours[i];
-        const numCustomers = getRandomIntInclusive(this.min, this.max);
+        const numCustomers = getRandom(this.min, this.max);
         const numCookies = Math.round(numCustomers * this.avg);
         const oneHour = {
             hour: hour,
@@ -70,31 +63,25 @@ function hourlySales(){
         salesByHour.push(oneHour);
     }
     this.salesByHour = salesByHour;
+    
     const mainList = document.getElementById('list');
     const title = document.createElement('H3');
     title.textContent = this.name;
     const ul = document.createElement('UL');
-    mainList.appendChild(title);
     mainList.appendChild(ul);
-
+    ul.appendChild(title);
+    
     for (let i= 0; i < hours.length; i++) {
         let li = document.createElement('LI');
-        // li.textContent = 'Test test';
-        li.textContent = this.salesByHour[i].hour + this.salesByHour[i].cookiesSold;
+        li.textContent = "Hour: " + this.salesByHour[i].hour + " Cookies: " + this.salesByHour[i].cookiesSold;
         ul.appendChild(li);
+        // this.hourlySales();
     }
+
 }
-
-
-
 
 airport.hourlySales();
 pioneer.hourlySales();
 powells.hourlySales();
 stjohns.hourlySales();
 waterfront.hourlySales();
-console.log(pioneer);
-console.log(powells);
-console.log(airport);
-console.log(stjohns);
-console.log(waterfront);
