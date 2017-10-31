@@ -1,3 +1,8 @@
-ul {
-    display: inline-block;
+#list {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul li {
+    list-style-type: none;
 }

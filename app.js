@@ -1,19 +1,15 @@
 'use strict'
 
-render();
-function render () {
-    const ul = document.getElementById('ul');
-    const li = document.createElement('li');
-    li.textContent = "List item";
-    ul.appendChild(li);
-}
+// const li = document.createElement('li');
+// li.textContent = "List item";
+// ul.appendChild(li);
 
 const airport = {
     name: 'Portland Airport',
     min: 23,
     max: 65,
     avg: 6.3,
-    hourlySales: hourlySales,
+    hourlySales: hourlySales
 };
 
 const pioneer = {
@@ -48,6 +44,10 @@ const waterfront = {
     hourlySales: hourlySales
 };
 
+
+
+
+
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 
@@ -70,7 +70,23 @@ function hourlySales(){
         salesByHour.push(oneHour);
     }
     this.salesByHour = salesByHour;
+    const mainList = document.getElementById('list');
+    const title = document.createElement('H3');
+    title.textContent = this.name;
+    const ul = document.createElement('UL');
+    mainList.appendChild(title);
+    mainList.appendChild(ul);
+
+    for (let i= 0; i < hours.length; i++) {
+        let li = document.createElement('LI');
+        // li.textContent = 'Test test';
+        li.textContent = this.salesByHour[i].hour + this.salesByHour[i].cookiesSold;
+        ul.appendChild(li);
+    }
 }
+
+
+
 
 airport.hourlySales();
 pioneer.hourlySales();
@@ -82,4 +98,3 @@ console.log(powells);
 console.log(airport);
 console.log(stjohns);
 console.log(waterfront);
-
