@@ -8,6 +8,46 @@ function render () {
     ul.appendChild(li);
 }
 
+const airport = {
+    name: 'Portland Airport',
+    min: 23,
+    max: 65,
+    avg: 6.3,
+    hourlySales: hourlySales,
+};
+
+const pioneer = {
+    name: 'Pioneer Square',
+    min: 3,
+    max: 24,
+    avg: 1.2,
+    hourlySales: hourlySales
+};
+
+const powells = {
+    name: 'Powells',
+    min: 11,
+    max: 38,
+    avg: 3.7,
+    hourlySales: hourlySales
+};
+
+const stjohns = {
+    name: 'St Johns',
+    min: 20,
+    max: 38,
+    avg: 2.3,
+    hourlySales: hourlySales
+};
+
+const waterfront = {
+    name: 'Waterfront',
+    min: 2,
+    max: 16,
+    avg: 4.6,
+    hourlySales: hourlySales
+};
+
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 
@@ -16,14 +56,6 @@ function getRandomIntInclusive(min,max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-const airport = {
-    name: 'Portland Airport',
-    min: 23,
-    max: 65,
-    avg: 6.3,
-    hourlySales: hourlySales,
-};
 
 function hourlySales(){
     const salesByHour = [];
@@ -41,37 +73,13 @@ function hourlySales(){
 }
 
 airport.hourlySales();
+pioneer.hourlySales();
+powells.hourlySales();
+stjohns.hourlySales();
+waterfront.hourlySales();
+console.log(pioneer);
+console.log(powells);
 console.log(airport);
+console.log(stjohns);
+console.log(waterfront);
 
-
-// const pioneer = {
-//     name: 'Pioneer Square',
-//     min: 3,
-//     max: 24,
-//     avg: 1.2,
-//     hourlySales: hourlySales
-// };
-
-// const powells = {
-//     name: 'Powells',
-//     min: 11,
-//     max: 38,
-//     avg: 3.7,
-//     hourlySales: hourlySales
-// };
-
-// const stjohns = {
-//     name: 'St Johns',
-//     min: 20,
-//     max: 38,
-//     avg: 2.3,
-//     hourlySales: hourlySales
-// };
-
-// const waterfront = {
-//     name: 'Waterfront',
-//     min: 2,
-//     max: 16,
-//     avg: 4.6,
-//     hourlySales: hourlySales
-// };
