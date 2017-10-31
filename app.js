@@ -2,7 +2,7 @@
 
 render();
 function render () {
-    const ul = document.getElementById('main-list');
+    const ul = document.getElementById('ul');
     const li = document.createElement('li');
     li.textContent = "List item";
     ul.appendChild(li);
