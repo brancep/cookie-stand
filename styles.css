@@ -13,10 +13,20 @@ h3 {
     padding: 5px 5px 5px 0;
 }
 
+table {
+    width: 100%;
+}
+
 thead {
     background: lightgrey;
 }
 
 tr {
     background: lightblue;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border-collapse: collapse;
 }
