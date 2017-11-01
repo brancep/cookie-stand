@@ -13,7 +13,7 @@ function Store (name, min, max, avg) {
     this.min = min;
     this.max = max;
     this.avg = avg;
-    this.salesbyHour = [];
+    this.salesByHour = [];
 
     for (let i=0; i < hours.length; i++){
         const hour = hours[i];
@@ -23,9 +23,9 @@ function Store (name, min, max, avg) {
             hour: hour,
             cookiesSold: numCookies
         }
-        salesByHour.push(oneHour);
+        this.salesByHour.push(oneHour);
     }
-};
+}
 
 
 //Random customer number generator.
@@ -35,37 +35,37 @@ function getRandom (min,max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const locations = [airport , pioneer , powells , stjohns , waterfront];
-
-
 ////For render
 
+
+
+/// for the hours header.
+
+const mainList = document.getElementById('list');
+const tRow = document.createElement('TR');
+mainList.appendChild(tRow);
+
+for (let i=0; i < hours.length; i++) {
+    const tHead = document.createElement('TH');
+    tHead.textContent = hours[i];
+    tRow.appendChild(tHead);
+};
+
+
+
 Store.prototype.build = function () {
-    const store = document.getElementById('list');
-    const title = document.createElement('H3'); //for a heading of location name
-    title.textContent = this.name;
-    store.appendChild(title);
+    const trCookie = document.createElement('TR'); // TR create
+    mainList.appendChild(trCookie);
 
-    //// to begin table construction.
-    const tableHead = document.getElementById('table-head');
-
-    // const ul = document.createElement('UL');
-    // store.appendChild(ul);
-    // ul.appendChild(title);
-
-    for (let i= 0; i < hours.length; i++) {   
-        const tableRow = document.createElement('TR');
-        tableHead.appendChild(tableRow);
-
-        const tableDataHour = document.createElement('TD');
-        tableHead.appendChild(tableDataHour);
-        tableDataHour.textContent = this.salesByHour[i].hour;
-
-        const tableDataCookie = document.createElement('TD');
-        tableHead.appendChild(tableDataCookie);
-        tableDataCookie.textContent = this.salesByHour[i].cookiesSold;
+    for (let i= 0; i < this.salesByHour.length; i++) {
+        const tdCookie = document.createElement('TD'); // TD create
+        tdCookie.textContent = this.salesByHour[i].cookiesSold; // TD content
+        trCookie.appendChild(tdCookie);
     }
 }
+
+
+
 
 airport.build();
 pioneer.build();
