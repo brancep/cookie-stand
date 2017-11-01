@@ -58,20 +58,17 @@ Store.prototype.build = function () {
     
     // [903,34,2,4,346,346]
     for (let i= 0; i < this.salesByHour.length; i++) {   
-        // tableHead.appendChild(tableRow);
-        
-        // const tableDataHour = document.createElement('TD');
-        // tableHead.appendChild(tableDataHour);
-        // tableDataHour.textContent = this.salesByHour[i].hour;
-        
         const tableDataCookie = document.createElement('TD'); // TD create
         tableRow.appendChild(tableDataCookie); // TD append  & TR content
         tableDataCookie.textContent = this.salesByHour[i].cookiesSold; // TD content
     }
     
     console.log('table row = ', tableRow);
-    const tbody = document.getElementById('table-body');
-    tbody.appendChild(tableRow); // TR append
+    this.row = tableRow;
+    return this.row;
+
+    // const tbody = document.getElementById('table-body');
+    // tbody.appendChild(tableRow); // TR append
     // return storeRow;
     /*  <tr>
             <th>PDX Airport</th>
@@ -82,7 +79,13 @@ Store.prototype.build = function () {
     */
 }
 
-airport.build();
+const airportRow = airport.build();
+console.log( 'airportRow = ', airportRow );
+console.log( 'airport.row = ', airport.row );
+
+const tbody = document.getElementById('table-body');
+tbody.appendChild(airportRow);
+
 pioneer.build();
 powells.build();
 stjohns.build();
