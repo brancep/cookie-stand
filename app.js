@@ -1,12 +1,11 @@
 'use strict'
+const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+
 const airport = new Store ('Portland Airport' , 23 , 65 , 6.3);
 const pioneer = new Store ('Pioneer Square' , 3 , 24 , 1.2);
 const powells = new Store ('Powell\'s Bookstore' , 11 , 38 , 3.7);
 const stjohns = new Store ('St Johns' , 20 , 38 , 2.3);
 const waterfront = new Store ('Waterfront' , 2 , 16 , 4.6);
-
-
-const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 function Store (name, min, max, avg) {
     this.name = name;
@@ -28,10 +27,6 @@ function Store (name, min, max, avg) {
     this.salesByHour = salesByHour;
 };
 
-console.log(salesByHour);
-
-
-
 
 //Random customer number generator.
 function getRandom (min,max) {
@@ -40,53 +35,57 @@ function getRandom (min,max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-//This will render on the page
-Store.prototype.build = function () {
-    const store = document.getElementById('div');
-    const title = document.createElement('H3');
-    title.textContent = this.name;
-    const ul = document.createElement('UL');
-    store.appendChild(ul);
-    ul.appendChild(title);
+const store = document.getElementById('list');
+const table = document.createElement('TABLE');
+store.appendChild(table);
 
-    for (let i= 0; i < hours.length; i++) {
-        let li = document.createElement('LI');
-        li.textContent = "Hour: " + this.salesByHour[i].hour + " Cookies: " + this.salesByHour[i].cookiesSold;
-        ul.appendChild(li);
-    }
+Store.prototype.build = function () {
+
+    //table head
+    const thead = document.createElement('THEAD');
+    table.appendChild(thead);
+    let trow = document.createElement('TR');
+    thead.appendChild(trow);
+    let tdata = document.createElement('TD');
+    trow.appendChild(tdata);
+    tdata.textContent = this.name;
+
+    //table head
+    let thHour = document.createElement('TH');
+    trow.appendChild(thHour);
+    thHour.textContent = "Hour: ";
+
+    const hourData = document.createElement('TD');
+    trow.appendChild(hourData);
+    hourData.textContent = this.hour;
+
+    let thCookies = document.createElement('TH');
+    trow.appendChild(thCookies);
+    thCookies.textContent = "Cookies: ";
+
+    const cookieData = document.createElement('TD');
+    trow.appendChild(cookieData);
+    cookieData.textContent = this.cookieSold;
 }
 
-// const mainList = document.getElementById('list');
-// const table = document.createElement('TABLE');
-// mainList.appendChild(table);
+// //This will render on the page
+// Store.prototype.build = function () {
+//     const store = document.getElementById('list');
+//     const title = document.createElement('H3');
+//     title.textContent = this.name;
+//     const ul = document.createElement('UL');
+//     store.appendChild(ul);
+//     ul.appendChild(title);
 
-// //table head
-// const thead = document.createElement('THEAD');
-// table.appendChild(thead);
-// thead.textContent = "Hours: ";
+//     for (let i= 0; i < hours.length; i++) {
+//         let li = document.createElement('LI');
+//         li.textContent = "Hour: " + this.salesByHour[i].hour + " Cookies: " + this.salesByHour[i].cookiesSold;
+//         ul.appendChild(li);
+//     }
+// }
 
-
-// // table head
-// const thead = document.createElement('THEAD');
-// table.appendChild(thead);
-// thead.textContent = this.name;
-
-// //table row
-// const trow = document.createElement('TR');
-// table.appendChild(trow);
-// trow.textContent = this.hour;
-
-// const hourData = document.createElement('TD');
-// trow.appendChild(hourData);
-// hourData.textContent = "Hour: ";
-
-// const cookieData = document.createElement('TD');
-// trow.appendChild(cookieData);
-// cookieData.textContent = "Cookies: ";
-
-
-// airport.hourlySales();
-// pioneer.hourlySales();
-// powells.hourlySales();
-// stjohns.hourlySales();
-// waterfront.hourlySales();
+airport.build();
+pioneer.build();
+powells.build();
+stjohns.build();
+waterfront.build();

@@ -19,11 +19,11 @@ table {
 
 thead {
     background: lightgrey;
+    padding: 20px 0;
 }
 
 tr {
     background: lightblue;
-    padding: 10px;
 }
 
 td {
