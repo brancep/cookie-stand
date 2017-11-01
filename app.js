@@ -1,4 +1,5 @@
-'use strict'
+'use strict.';
+
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 const airport = new Store ('Portland Airport' , 23 , 65 , 6.3);
@@ -35,54 +36,37 @@ function getRandom (min,max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const store = document.getElementById('list');
-const table = document.createElement('TABLE');
-store.appendChild(table);
+const locations = [airport , pioneer , powells , stjohns , waterfront];
+
+
+////For render
 
 Store.prototype.build = function () {
+    const store = document.getElementById('list');
+    const title = document.createElement('H3'); //for a heading of location name
+    title.textContent = this.name;
+    store.appendChild(title);
 
-    //table head
-    const thead = document.createElement('THEAD');
-    table.appendChild(thead);
-    let trow = document.createElement('TR');
-    thead.appendChild(trow);
-    let tdata = document.createElement('TD');
-    trow.appendChild(tdata);
-    tdata.textContent = this.name;
+    //// to begin table construction.
+    const tableHead = document.getElementById('table-head');
 
-    //table head
-    let thHour = document.createElement('TH');
-    trow.appendChild(thHour);
-    thHour.textContent = "Hour: ";
+    // const ul = document.createElement('UL');
+    // store.appendChild(ul);
+    // ul.appendChild(title);
 
-    const hourData = document.createElement('TD');
-    trow.appendChild(hourData);
-    hourData.textContent = this.hour;
+    for (let i= 0; i < hours.length; i++) {   
+        const tableRow = document.createElement('TR');
+        tableHead.appendChild(tableRow);
 
-    let thCookies = document.createElement('TH');
-    trow.appendChild(thCookies);
-    thCookies.textContent = "Cookies: ";
+        const tableDataHour = document.createElement('TD');
+        tableHead.appendChild(tableDataHour);
+        tableDataHour.textContent = this.salesByHour[i].hour;
 
-    const cookieData = document.createElement('TD');
-    trow.appendChild(cookieData);
-    cookieData.textContent = this.cookieSold;
+        const tableDataCookie = document.createElement('TD');
+        tableHead.appendChild(tableDataCookie);
+        tableDataCookie.textContent = this.salesByHour[i].cookiesSold;
+    }
 }
-
-// //This will render on the page
-// Store.prototype.build = function () {
-//     const store = document.getElementById('list');
-//     const title = document.createElement('H3');
-//     title.textContent = this.name;
-//     const ul = document.createElement('UL');
-//     store.appendChild(ul);
-//     ul.appendChild(title);
-
-//     for (let i= 0; i < hours.length; i++) {
-//         let li = document.createElement('LI');
-//         li.textContent = "Hour: " + this.salesByHour[i].hour + " Cookies: " + this.salesByHour[i].cookiesSold;
-//         ul.appendChild(li);
-//     }
-// }
 
 airport.build();
 pioneer.build();
