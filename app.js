@@ -35,11 +35,7 @@ function getRandom (min,max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-////For render
-
-
-
-/// for the hours header.
+//// This will display the row of hours at the top.
 
 const mainList = document.getElementById('list');
 const tRow = document.createElement('TR');
@@ -51,9 +47,13 @@ for (let i=0; i < hours.length; i++) {
     tRow.appendChild(tHead);
 };
 
-
-
+//// Main proto for building out data in the columns.
 Store.prototype.build = function () {
+
+    //// This is for location names. Need to sort our how to have them on the left.
+    // const locNames = document.createElement('TH');
+    // locNames.textContent = this.name;
+    // mainList.appendChild(locNames);
     const trCookie = document.createElement('TR'); // TR create
     mainList.appendChild(trCookie);
 
@@ -65,10 +65,24 @@ Store.prototype.build = function () {
 }
 
 
-
-
 airport.build();
 pioneer.build();
 powells.build();
 stjohns.build();
 waterfront.build();
+
+const formInfo = document.getElementById('form');
+
+formInfo.addEventListener('submit' , function () {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const min = document.getElementById('min').value;
+    const max = document.getElementById('max').value;
+    const avg = document.getElementById('avg').value;
+
+    const newStore = new Store (name, min, max, avg);
+
+    
+
+});
+

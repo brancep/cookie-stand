@@ -1,4 +1,10 @@
+body {
+    font-family: sans-serif;
+}
 
+h1 {
+    text-align: center;
+}
 
 #list {
     /* display: flex;
@@ -34,6 +40,41 @@ td {
     background-color: lightblue;
 }
 
-form {
-    display: none;
+section {
+    padding: 50px;
 }
+
+form {
+    margin-top: 50px;
+    padding: 50px;
+    width: 40%;
+    margin: 0 auto;
+    background: #eee;
+    border: none;
+}
+
+legend {
+    font-size: 200%;
+    font-weight: bold;
+}
+
+form label, button {
+    display: block;
+    margin: 10px;
+}
+
+input {
+    padding: 15px;
+    border: solid 2px #000;
+    border-radius: 50px;
+}
+
+button {
+    padding: 10px;
+    border: solid 2px #000;
+    border-radius: 50px;
+    background: transparent;
+    margin-left: 0;
+}
+
+
