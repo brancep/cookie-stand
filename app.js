@@ -13,8 +13,8 @@ function Store (name, min, max, avg) {
     this.min = min;
     this.max = max;
     this.avg = avg;
+    this.salesbyHour = [];
 
-    const salesByHour = [];
     for (let i=0; i < hours.length; i++){
         const hour = hours[i];
         const numCustomers = getRandom(this.min, this.max);
@@ -25,7 +25,6 @@ function Store (name, min, max, avg) {
         }
         salesByHour.push(oneHour);
     }
-    this.salesByHour = salesByHour;
 };
 
 
