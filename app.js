@@ -42,7 +42,7 @@ const tRow = document.createElement('TR');
 mainList.appendChild(tRow);
 
 const space = document.createElement('TH');
-space.textContent = "Hours:";
+space.textContent = "";
 tRow.appendChild(space);
 
 for (let i=0; i < hours.length; i++) {
