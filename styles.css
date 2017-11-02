@@ -10,20 +10,24 @@ body {
 h1 {
     margin: 0;
     padding-top: 40px;
-    text-align: center;
     font-size: 80px;
-    color: #fff;
+    font-family: 'homemade apple';
+}
+
+h2 {
+    margin: 0;
+    margin-bottom: 20px;
 }
 
 #header {
     display: block;
+    padding: 60px;
+    color: #fff;
+    text-align: center;
     background-image: url('http://www.seriouseats.com/recipes/assets_c/2017/08/20170727-bravetart-oreos-vicky-wasik-27-thumb-1500xauto-438803.jpg');
     background-position: bottom right;
     background-size: cover;
     background-attachment: fixed;
-    height: 300px;
-    color: #fff;
-    text-transform: uppercase;
 }
 
 /* BEGIN TABLE */
@@ -31,7 +35,7 @@ h1 {
 #table-section {
     padding: 5%;
     margin: 0 auto;
-    margin-top: -150px;
+    margin-top: -120px;
 }
 
 table {
