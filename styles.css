@@ -1,61 +1,74 @@
 body {
     font-family: sans-serif;
+    margin: 0;
 }
 
 h1 {
+    margin: 0;
+    padding-top: 40px;
     text-align: center;
+    font-size: 45px;
 }
 
-#list {
-    /* display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; */
+#header {
+    display: block;
+    background: rgba(200,0,0,.7);
+    height: 250px;
+    color: #fff;
+    text-transform: uppercase;
 }
 
+/* BEGIN TABLE */
 
-ul li {
-    list-style-type: none;
-    padding: 10px 0;
-
-}
-
-h3 {
-    padding: 5px 5px 5px 0;
+#table-section {
+    padding: 50px;
+    margin: 0 auto;
+    margin-top: -100px;
 }
 
 table {
-    width: 100%;
-    text-align: center;
-    font-family: sans-serif;
+    border: solid 3px black;
+    text-align: left;
+    border-collapse: collapse;
 }
 
 th {
-    padding: 20px;
+    background: #eee;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+tr:nth:nth-child(even) {
+    background: #eee;
 }
 
 td {
-    padding: 20px;
+    padding: 15px;
     border-collapse: collapse;
-    width: 200px;
+    border: solid 3px black;
     background-color: lightblue;
+    text-align: center;
 }
 
-section {
-    padding: 50px;
-}
+
+/* FORM SECTION */
 
 form {
-    margin-top: 50px;
     padding: 50px;
-    width: 40%;
     margin: 0 auto;
     background: #eee;
     border: none;
+    text-align: center;
 }
 
 legend {
     font-size: 200%;
     font-weight: bold;
+}
+
+fieldset {
+    border: none;
+    border: solid 1px black;
 }
 
 form label, button {
@@ -67,6 +80,7 @@ input {
     padding: 15px;
     border: solid 2px #000;
     border-radius: 50px;
+    width: 200px;
 }
 
 button {
@@ -75,6 +89,8 @@ button {
     border-radius: 50px;
     background: transparent;
     margin-left: 0;
+    margin: auto;
+    margin-top: 25px;
 }
 
 

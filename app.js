@@ -41,21 +41,27 @@ const mainList = document.getElementById('list');
 const tRow = document.createElement('TR');
 mainList.appendChild(tRow);
 
+const space = document.createElement('TH');
+space.textContent = "Hours:";
+tRow.appendChild(space);
+
 for (let i=0; i < hours.length; i++) {
     const tHead = document.createElement('TH');
     tHead.textContent = hours[i];
     tRow.appendChild(tHead);
 };
 
+
 //// Main proto for building out data in the columns.
 Store.prototype.build = function () {
 
-    //// This is for location names. Need to sort our how to have them on the left.
-    // const locNames = document.createElement('TH');
-    // locNames.textContent = this.name;
-    // mainList.appendChild(locNames);
+    // This is for location names. Need to sort our how to have them on the left.
+    
     const trCookie = document.createElement('TR'); // TR create
     mainList.appendChild(trCookie);
+    const locNames = document.createElement('TH');
+    locNames.textContent = this.name;
+    trCookie.appendChild(locNames);
 
     for (let i= 0; i < this.salesByHour.length; i++) {
         const tdCookie = document.createElement('TD'); // TD create
@@ -81,8 +87,6 @@ formInfo.addEventListener('submit' , function () {
     const avg = document.getElementById('avg').value;
 
     const newStore = new Store (name, min, max, avg);
-
-    
-
+    newStore.build();
 });
 
