@@ -10,24 +10,54 @@ body {
 h1 {
     margin: 0;
     padding-top: 40px;
-    font-size: 80px;
-    font-family: 'homemade apple';
+    font-size: 100px;
+    font-family: 'gochi hand';
+    color: hsl(34, 47%, 61%);
+    line-height: 1.2em;
 }
 
 h2 {
     margin: 0;
     margin-bottom: 20px;
+    font-size: 35px;
+    color: #fff;
 }
 
 #header {
     display: block;
     padding: 60px;
-    color: #fff;
     text-align: center;
-    background-image: url('http://www.seriouseats.com/recipes/assets_c/2017/08/20170727-bravetart-oreos-vicky-wasik-27-thumb-1500xauto-438803.jpg');
+    text-shadow: 4px 4px 12px #000;
+    background-image: url('https://images.pond5.com/underwater-footage-024397311_prevstill.jpeg');
     background-position: bottom right;
     background-size: cover;
     background-attachment: fixed;
+}
+
+#header #salmonImg1 {
+    display: block;
+    position: absolute;
+    width: 340px;
+    top: 30px;
+    right: 20px;
+    transform: rotate(20deg);
+}
+
+#header #salmonImg2 {
+    display: block;
+    position: absolute;
+    width: 340px;
+    top: 30px;
+    left: 20px;
+    transform: rotate(-20deg);
+}
+
+#header #salmonImg2 img {
+    width: 100%
+}
+
+#salmonImg1 img{
+    width: 100%;
 }
 
 /* BEGIN TABLE */
@@ -51,16 +81,25 @@ th {
     text-transform: uppercase;
 }
 
-tr:nth:nth-child(even) {
-    background: #eee;
+th:last-of-type {
+    background: black;
+    color: lightblue;
+    font-size: 150%;
+    text-align: center;
+}
+
+td:nth-child(odd) {
+    background: lightblue;
+    color: #000;
 }
 
 td {
     padding: 15px;
     border-collapse: collapse;
     border: solid 3px black;
-    background-color: lightblue;
+    background-color:hsl(200, 69%, 43%);
     text-align: center;
+    color: #fff;
 }
 
 
