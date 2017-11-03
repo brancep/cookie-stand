@@ -2,12 +2,6 @@
 
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
-const airport = new Store ('Portland Airport' , 23 , 65 , 6.3);
-const pioneer = new Store ('Pioneer Square' , 3 , 24 , 1.2);
-const powells = new Store ('Powell\'s Bookstore' , 11 , 38 , 3.7);
-const stjohns = new Store ('St Johns' , 20 , 38 , 2.3);
-const waterfront = new Store ('Waterfront' , 2 , 16 , 4.6);
-
 
 //// Main constructor function for calculating the number of cookies and random number of customers.
 function Store (name, min, max, avg) {
@@ -16,8 +10,12 @@ function Store (name, min, max, avg) {
     this.max = max;
     this.avg = avg;
     this.salesByHour = [];
+    this.mainSales();
+}
 
-    for (let i=0; i < hours.length; i++){
+
+Store.prototype.mainSales = function () {
+for (let i=0; i < hours.length; i++){
         const hour = hours[i];
         const numCustomers = getRandom(this.min, this.max);
         const numCookies = Math.round(numCustomers * this.avg);
@@ -26,8 +24,17 @@ function Store (name, min, max, avg) {
             cookiesSold: numCookies
         }
         this.salesByHour.push(oneHour);
-    }   
+    }
 }
+
+
+const airport = new Store ('Portland Airport' , 23 , 65 , 6.3);
+const pioneer = new Store ('Pioneer Square' , 3 , 24 , 1.2);
+const powells = new Store ('Powell\'s Bookstore' , 11 , 38 , 3.7);
+const stjohns = new Store ('St Johns' , 20 , 38 , 2.3);
+const waterfront = new Store ('Waterfront' , 2 , 16 , 4.6);
+
+
 
 //// Creation of the main table and row
 const mainList = document.getElementById('list');
