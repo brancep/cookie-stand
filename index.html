@@ -17,9 +17,9 @@
     <div id="header">
         <nav>
             <ul>
-                <li><a href="#">About</a></li>
+                <li><a href="#about-section">About</a></li>
                 <li><a href="#">Shop</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#contact-section">Contact</a></li>
             </ul>
         </nav>
 
@@ -34,8 +34,10 @@
 
 
     <section id="about-section">
-        <div id="about-info">
+        <div id="heading-box">
             <h2>About Us</h2>
+        </div>
+        <div id="about-info">
             <p><strong>Who we are.</strong></p>
             <p>Lorem ipsum dolor sit amet, vel vidit referrentur no, vide ubique ei nam, numquam meliore pri ut. Pri ferri indoctum ad. Animal ponderum te per, at molestie inciderint mel. Nostro numquam principes pri te, eu diceret numquam pri. In soluta reprimique suscipiantur mei, vix at democritum suscipiantur.</p>
                     
@@ -48,7 +50,54 @@
     </section>
     <!-- End of about section -->
 
+    <section id="contact-section">
+        <div id="heading-box">
+            <h2>Say Hello!</h2>
+            <h3>
+                123 Fake Street<br>
+                Portland, Oregon 97205<br>
+                503-555-1234
+            </h3>
+        </div>
+        <form>
+            <fieldset>
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your Name">
 
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Your Email" required>
+
+                <label for="msg">Message</label>
+                <textarea id="msg" placeholder="Your Message" required></textarea>
+
+                <button>Say Hello!</button>
+            </fieldset>
+        </form>
+    </section>
+
+    <section id="gallery-section">
+        <div id="merch-wrapper">
+
+            <figure src="assets/cutter.jpg" id="fig1">
+                <figcaption>
+                    <p>At veri vocibus sapientem cum. Vidit intellegat efficiendi ut per, voluptaria delicatissimi cu duo, quo an vocent quaeque referrentur. His ex facilisi volutpat appellantur. Vide eruditi neglegentur ex his, vel quod porro clita et. At eos nihil persecuti deterruisset.</p>
+                </figcaption>
+            </figure>
+
+            <figure src="assets/frosted-cookie.jpg" id="fig2">
+                <figcaption>
+                    <p>At veri vocibus sapientem cum. Vidit intellegat efficiendi ut per, voluptaria delicatissimi cu duo, quo an vocent quaeque referrentur. His ex facilisi volutpat appellantur. Vide eruditi neglegentur ex his, vel quod porro clita et. At eos nihil persecuti deterruisset.</p>
+                </figcaption>
+            </figure>
+
+            <figure src="assets/shirt.jpg" id="fig3">
+                <figcaption>
+                    <p>At veri vocibus sapientem cum. Vidit intellegat efficiendi ut per, voluptaria delicatissimi cu duo, quo an vocent quaeque referrentur. His ex facilisi volutpat appellantur. Vide eruditi neglegentur ex his, vel quod porro clita et. At eos nihil persecuti deterruisset.</p>
+                </figcaption>
+            </figure>
+
+        </div>
+    </section>
 
     <script src="app.js"></script>
 </body>

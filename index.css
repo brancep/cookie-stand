@@ -1,10 +1,24 @@
 body {
     margin: 0;
+    font-family: sans-serif;
 }
 
 a {
     text-decoration: none;
     color: #000;
+}
+
+:focus {
+    outline-style: none;
+}
+
+button {
+    margin: auto;
+    padding: 20px;
+    background: lightblue;
+    color: black;
+    font-size: 20px;
+    border: none;
 }
 
 h1, h2, h3 {
@@ -15,29 +29,22 @@ h1 {
     font-family: 'gochi hand';
     font-size: 100px;
     color: hsl(34, 47%, 61%);
+    text-shadow: 4px 4px 12px #000;
 }
 
-/* header {
-    position: absolute;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    padding: 5px 20px;
-    background: transparent;
-} */
+h2 {
+    font-size: 45px;
 
-#logo {
-    display: flex;
 }
 
-#logo img{
-    width: 100px;
-    height: 100px;
+h3 {
+    font-size: 30px;
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
+    -webkit-padding-start: 0;
 }
 
 ul li {
@@ -49,25 +56,11 @@ ul li {
     font-family: sans-serif;
 }
 
-
-#about-section {
-    padding: 50px;
-    background-image: url('assets/family.jpg');
-    background-size: cover;
-}
-
-#about-info {
-    width: 80%;
-    margin: 0 auto;
-    background-color: rgba(255,255,255,.6);
-    padding: 2rem;
-}
-
 #header {
     display: block;
     padding: 60px;
+    height: 65vh;
     text-align: center;
-    text-shadow: 4px 4px 12px #000;
     background-image: url('https://images.pond5.com/underwater-footage-024397311_prevstill.jpeg');
     background-position: bottom right;
     background-size: cover;
@@ -98,4 +91,69 @@ ul li {
 
 #salmonImg1 img{
     width: 100%;
+}
+
+form {
+}
+
+form fieldset {
+    padding: 0 40px;
+    border: none;
+}
+
+form input,
+form label {
+    display: block;
+}
+
+input,
+textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    border: solid 3px lightblue;
+}
+
+#about-section {
+    padding: 80px 40px;
+    background-image: url('assets/family.jpg');
+    background-size: cover;
+}
+
+#about-info {
+    width: 40%;
+    background-color: rgba(255,255,255,1);
+    padding: 2rem;
+}
+
+#about-info strong {
+    border-bottom: solid 3px lightblue;
+}
+
+#contact-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 80px 40px;
+}
+
+#heading-box h3 {
+    padding-top: 30px;
+}
+
+#gallery-section {
+    padding: 80px 40px;
+}
+
+#gallery-section {
+    background: lightblue;
+}
+
+#merch-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+#merch-wrapper figure {
+    border: solid 3px hsl(208, 76%, 36%);
+    padding: 10px;
 }
