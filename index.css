@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+h1 {
+    font-family: 'gochi hand';
+    font-size: 100px;
+    color: hsl(34, 47%, 61%);
+}
+
+/* header {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 20px;
+    background: transparent;
+} */
+
+#logo {
+    display: flex;
+}
+
+#logo img{
+    width: 100px;
+    height: 100px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+ul li {
+    display: inline-block;
+    margin: 0;
+    padding: 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+
+#about-section {
+    padding: 50px;
+    background-image: url('assets/family.jpg');
+    background-size: cover;
+}
+
+#about-info {
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,.6);
+    padding: 2rem;
+}
+
+#header {
+    display: block;
+    padding: 60px;
+    text-align: center;
+    text-shadow: 4px 4px 12px #000;
+    background-image: url('https://images.pond5.com/underwater-footage-024397311_prevstill.jpeg');
+    background-position: bottom right;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#header #salmonImg1 {
+    display: block;
+    position: absolute;
+    width: 340px;
+    top: 30px;
+    right: 20px;
+    transform: rotate(20deg);
+}
+
+#header #salmonImg2 {
+    display: block;
+    position: absolute;
+    width: 340px;
+    top: 30px;
+    left: 20px;
+    transform: rotate(-20deg);
+}
+
+#header #salmonImg2 img {
+    width: 100%
+}
+
+#salmonImg1 img{
+    width: 100%;
+}
