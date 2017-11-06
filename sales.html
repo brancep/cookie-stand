@@ -32,17 +32,27 @@
         <form id="form">
             <fieldset>
                 <legend>Add a Store!!</legend>
-                <label>Location Name</label>
-                <input type="text" id="name" placeholder="Location Name">
+                <ul>
+                    <li>
+                        <label>Location Name</label>
+                        <input type="text" id="name" placeholder="Location Name">
+                    </li>
+                    <li>
+                        <label>Min Customers</label>
+                        <input type="number" id="min" placeholder="Minimum">
+                    </li>
+                    <li>
+                        <label>Max Customers</label>
+                        <input type="number" id="max" placeholder="Maximum">
+                    </li>
+                    <li>
+                        <label>Number of Cookies</label>
+                        <input type="number" id="avg" placeholder="average in decimal">
+                    </li>
+                </ul>
+                
+                
 
-                <label>Min Customers</label>
-                <input type="number" id="min" placeholder="Minimum">
-
-                <label>Max Customers</label>
-                <input type="number" id="max" placeholder="Maximum">
-
-                <label>Number of Cookies</label>
-                <input type="number" id="avg" placeholder="average in decimal">
                 <button id="formButton">Add Store</button>
             </fieldset>
         </form>

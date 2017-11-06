@@ -53,13 +53,6 @@ for (let i=0; i < hours.length; i++) {
     tRow.appendChild(tHead);
 };
 
-
-// salesTotal = 0;
-// for (let i = 0; i < hours.length; i ++) {
-//     let salesTotal = this.salesTotal + this.salesByHour.cookiesSold;
-// }
-
-
 /// Total header
 const totalHeader = document.createElement('TH');
 tRow.appendChild(totalHeader);
@@ -94,8 +87,6 @@ Store.prototype.build = function () {
     trCookie.appendChild(tSalesData);
 }
 
-
-
 //// HELPER FUNCTIONS ////
 //Random customer number generator.
 function getRandom (min,max) {
@@ -114,8 +105,6 @@ stjohns.build();
 waterfront.build();
 
 
-
-
 //// Taking the information from the for and populating it to the page.
 
 const formInfo = document.getElementById('form');
@@ -130,4 +119,3 @@ formInfo.addEventListener('submit' , function () {
     const newStore = new Store (name, min, max, avg);
     newStore.build();
 });
-

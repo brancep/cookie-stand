@@ -123,27 +123,33 @@ fieldset {
     border: solid 1px black;
 }
 
-form label[type="text"], button {
-    display: block;
-    margin: 10px;
+form label {
+    font-size: 120%;
 }
 
-input {
-    padding: 15px;
-    border: solid 2px #000;
-    border-radius: 50px;
-    width: 40%;
+form input {
+    padding: 20px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+fieldset ul {
+    text-align: center;
+    padding: 0;
+}
+
+fieldset ul li {
+    display: block;
 }
 
 button {
-    padding: 10px;
-    border: solid 2px #000;
-    border-radius: 50px;
-    background: transparent;
-    margin-left: 0;
+    padding: 2rem;
+    border: none;
+    background: black;
     margin: auto;
-    margin-top: 25px;
     cursor: pointer;
+    color: #fff;
+    font-size: 25px;
 }
 
 
